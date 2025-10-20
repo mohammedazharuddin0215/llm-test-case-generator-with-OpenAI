@@ -1,10 +1,14 @@
 import streamlit as st
+import os
+os.system("pip install litellm==1.78.4 --quiet")
 from litellm import completion
 from PIL import Image
 import pytesseract
 import streamlit as st
 from litellm import completion
 from PIL import Image
+from dotenv import load_dotenv
+
 
 
 

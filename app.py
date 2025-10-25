@@ -188,7 +188,7 @@ def main():
                 
                 df = pd.DataFrame(rows, columns=['Functionality', 'Test Summary', 'Pre Condition', 'Test Data', 'Test Steps', 'Expected Result'])
                 st.subheader("Generated Test Cases (table)")
-                st.dataframe(df)
+                st.dataframe(df, use_container_width=True)
 
                 # Save to excel
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

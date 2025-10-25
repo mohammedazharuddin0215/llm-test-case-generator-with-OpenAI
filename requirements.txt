@@ -3,6 +3,8 @@ python-dotenv
 streamlit
 pandas
 openpyxl
+pillow
+pytesseract
 # openpyxlaccelerate==1.10.1
 # aiohappyeyeballs==2.6.1
 # aiohttp==3.13.1

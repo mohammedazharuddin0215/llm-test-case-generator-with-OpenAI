@@ -98,7 +98,7 @@ def main():
             with st.spinner("Generating comprehensive test cases (positive, negative, edge)..."):
                 generator = TestCaseGenerator()
                 # Use automatic comprehensive counts - adjust here if you want different defaults
-                result = generator.generate_test_cases(input_text, positive=5, negative=5, edge=5)
+                result = generator.generate_test_cases(input_text, positive=20, negative=20, edge=10)
 
                 # result may be list(dict) or raw string
                 if not result:
@@ -148,7 +148,7 @@ def main():
                 if not parsed_list:
                     # Could not parse into structured list - show raw output so user can inspect
                     st.subheader("Raw output from model (unstructured)")
-                    st.text_area("Model output", value=result if isinstance(result, str) else str(result), height=400)
+                    st.text_area("Model output", value=result if isinstance(result, str) else str(result), height=800)
                     return
 
                 # Normalize parsed_list entries into table-friendly dicts
@@ -180,7 +180,7 @@ def main():
 
                 if not rows:
                     st.subheader("Raw output from model (no structured test cases found)")
-                    st.text_area("Model output", value=str(result), height=400)
+                    st.text_area("Model output", value=str(result), height=900)
                     return
 
                 df = pd.DataFrame(rows, columns=['Functionality', 'Test Summary', 'Pre Condition', 'Test Data', 'Test Steps', 'Expected Result'])

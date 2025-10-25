@@ -76,7 +76,7 @@ class TestCaseGenerator:
         prompt = prompt_prefix + requirement_text + prompt_suffix
 
         # prefer deterministic output and allow more tokens for larger lists
-        raw = self.llm.generate(prompt, temperature=0.2, max_tokens=3000)
+        raw = self.llm.generate(prompt, temperature=0.2, max_tokens=8000)
         if not raw:
             return None
 

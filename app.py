@@ -179,11 +179,13 @@ def main():
                         'Expected Result': tc.get('Expected Result', tc.get('Expected', ''))
                     })
 
+                rows = [row for row in rows if any(str(v).strip() for v in row.values())]
+    
                 if not rows:
                     st.subheader("Raw output from model (no structured test cases found)")
                     st.text_area("Model output", value=str(result), height=900)
                     return
-
+                
                 df = pd.DataFrame(rows, columns=['Functionality', 'Test Summary', 'Pre Condition', 'Test Data', 'Test Steps', 'Expected Result'])
                 st.subheader("Generated Test Cases (table)")
                 st.dataframe(df)

@@ -98,7 +98,7 @@ def main():
             with st.spinner("Generating comprehensive test cases (positive, negative, edge)..."):
                 generator = TestCaseGenerator()
                 # Use automatic comprehensive counts - adjust here if you want different defaults
-                result = generator.generate_test_cases(input_text, positive=50, negative=50, edge=50)
+                result = generator.generate_test_cases(input_text, positive=20, negative=20, edge=20)
 
                 # result may be list(dict) or raw string
                 if not result:
